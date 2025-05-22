@@ -84,7 +84,7 @@ arcCenterLED.setBrightness(120);
 suitLED.begin();       // INITIALIZE NeoPixel strip object (REQUIRED)
 suitLED.setBrightness(60);  
   
-  // suitLED.fill(suiteLED.Color(255, 255, 255));
+  // suitLED.fill(suitLED.Color(255, 255, 255));
 
 suitLED.setPixelColor(0, 255, 255, 255);
 suitLED.setPixelColor(1, 255, 255, 255);
