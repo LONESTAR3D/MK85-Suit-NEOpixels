@@ -1,0 +1,148 @@
+#include <Adafruit_NeoPixel.h>
+
+
+
+#define PIN_3 3   // Arduino pin that connects to LED_strip0 - Arc Reactor Outer Ring LEDs
+#define PIN_5 5   // Arduino pin that connects to LED_strip1 - Arc Reactor Cener LEDs
+#define PIN_6 6   // Arduino pin that connects to LED_strip2 - Chest, Abs, Leg LEDs
+#define PIN_8 8   // Arduino pin that connects to LED_strip3 - Back LEDs
+
+
+// How many NeoPixels are attached to each LED strip
+
+#define LED_strip0   12    //  Arc Reactor Outer Ring
+#define LED_strip1   7    //  Arc Reactor Center LEDs
+#define LED_strip2   6    //  Chest_Abs_Leg LEDs
+#define LED_strip3   2    //  Back LEDs
+
+
+// NeoPixel brightness, 0 (min) to 255 (max)
+int BRIGHTNESS = 255;
+
+
+// Parameter 1 = number of pixels in strip
+// Parameter 2 = Arduino pin number (most are valid)
+// Parameter 3 = pixel type flags, add together as needed:
+//   NEO_KHZ800  800 KHz bitstream (most NeoPixel products w/WS2812 LEDs)
+//   NEO_KHZ400  400 KHz (classic 'v1' (not v2) FLORA pixels, WS2811 drivers)
+//   NEO_GRB     Pixels are wired for GRB bitstream (most NeoPixel products)
+//   NEO_RGB     Pixels are wired for RGB bitstream (v1 FLORA pixels, not v2)
+//   NEO_RGBW    Pixels are wired for RGBW bitstream (NeoPixel RGBW products)
+
+
+
+
+Adafruit_NeoPixel arcLED(LED_strip0, PIN_3, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel arcCenterLED(LED_strip1, PIN_5, NEO_GRBW + NEO_KHZ800);
+Adafruit_NeoPixel suitLED(LED_strip2, PIN_6, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel backLED(LED_strip3, PIN_8, NEO_GRB + NEO_KHZ800);
+
+
+// IMPORTANT: To reduce NeoPixel burnout risk, add 1000 uF capacitor across
+// pixel power leads, add 300 - 500 Ohm resistor on first pixel's data input
+// and minimize distance between Arduino and first pixel.  Avoid connecting
+// on a live circuit...if you must, connect GND first.
+
+
+void setup() {
+
+arcLED.begin();
+arcLED.setBrightness(60);
+
+
+// arcLED.fill(arcLED.Color(102, 204, 232));
+
+arcLED.setPixelColor(0, 102, 204, 232);
+arcLED.setPixelColor(1, 102, 204, 232);
+arcLED.setPixelColor(2, 102, 204, 232);
+arcLED.setPixelColor(3, 102, 204, 232);
+arcLED.setPixelColor(4, 102, 204, 232);
+arcLED.setPixelColor(5, 102, 204, 232);
+arcLED.setPixelColor(6, 102, 204, 232);
+arcLED.setPixelColor(7, 102, 204, 232);
+arcLED.setPixelColor(8, 102, 204, 232);
+arcLED.setPixelColor(9, 102, 204, 232);
+arcLED.setPixelColor(10, 102, 204, 232);
+arcLED.setPixelColor(11, 102, 204, 232);
+arcLED.setPixelColor(12, 102, 204, 232);
+
+  
+arcLED.show();
+
+
+
+arcCenterLED.begin();
+
+arcCenterLED.setBrightness(120); 
+  
+  // Needs its own pin and set for GRBW
+  arcCenterLED.fill(arcCenterLED.Color(102, 204, 232, 0));
+  
+  arcCenterLED.show();
+  
+         
+suitLED.begin();       // INITIALIZE NeoPixel strip object (REQUIRED)
+suitLED.setBrightness(60);  
+  
+  // suitLED.fill(suiteLED.Color(255, 255, 255));
+
+suitLED.setPixelColor(0, 255, 255, 255);
+suitLED.setPixelColor(1, 255, 255, 255);
+suitLED.setPixelColor(2, 255, 255, 255);
+suitLED.setPixelColor(3, 255, 255, 255);
+suitLED.setPixelColor(4, 255, 255, 255);
+suitLED.setPixelColor(5, 255, 255, 255);
+suitLED.setPixelColor(6, 255, 255, 255);
+
+suitLED.show();
+
+backLED.begin();
+backLED.setBrightness(60);
+
+// backLED.fill(backLED.Color(255, 255, 255));
+
+backLED.setPixelColor(0, 255, 255, 255);
+backLED.setPixelColor(1, 255, 255, 255);
+
+backLED.show();
+
+  
+  
+   
+}
+
+void loop() {
+
+
+}
+
+   
+
+
+   
+   
+
+ 
+
+  
+  
+
+
+    
+  
+    
+    
+        
+  
+      
+
+     
+
+
+   
+
+
+  
+
+  
+         
